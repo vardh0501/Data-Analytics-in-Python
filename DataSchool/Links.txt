@@ -1,0 +1,4 @@
+Data School Github link: https://github.com/justmarkham/pandas-videos
+
+Pandas Q & A video series:
+https://nbviewer.org/github/justmarkham/pandas-videos/blob/master/pandas.ipynb

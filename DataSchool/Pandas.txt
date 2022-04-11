@@ -1,0 +1,228 @@
+Links:
+GitHub:https://github.com/justmarkham/pandas-videos/tree/master/data
+https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html
+https://www.w3resource.com/python-exercises/pandas/index-data-series.php
+https://pbpython.com/
+https://github.com/justmarkham/pandas-videos/blob/master/pandas.ipynb
+
+References:
+Pandas.read_table
+pandas API reference
+pandas.get_option
+
+1.Tips:
+Read Pandas.read_table
+skiprows and skipfooter
+https://pandas.pydata.org/pandas-docs/version/0.25.0/reference/api/pandas.read_table.html
+Tabular data just looks like a data with rows and columns
+
+2.Object Types:
+Series
+Data frames- table of rows and columns- pandas series
+
+head()- First 5 rows
+tail() - Last 5 rows
+
+read_csv vs read_table
+read_csv - Used the comma as a default seperator
+
+3. .notation works only certain circumstances where [] notation works well for all cases
+describe()- shows descriptive statistics of all numeric columns
+Parantheses funcions               No parantheses
+head()					shape
+describe()				dtypes
+
+4.Attributes are the descrptions that will be without parantheses such as shape,dtypes
+Methods are actions
+if it starts with pd. then its a function
+
+5.axis is a direction
+axis 0, row axis,default
+axis 1, columns axis
+
+6.pandas dataframe - table of data, rows and columns
+series- single column from a data frame
+
+7.When should you use group by
+Anytime you want to analyze some pandas series by some category
+
+8.tail() - Last 5 rows
+Nan - stands for Not a Number, conceptually its a missing values
+
+10.Index and columns
+
+Index:It's for identification, we can identify what rows we can working with
+0
+1
+2
+3
+4
+
+Columns:
+Country beer_serviongs spirit_servings
+
+loc- filtering rows and selecting columns by label.Label(Rows->Index, Column->Columns)
+loc inclusive on both sides
+
+iloc -  filtering rows and selecting columns by integer position
+inclusive of first number and exclusive of the last number
+ix - mix labels and integers
+
+10. inplace
+inplace=True, affects underlined data
+See the impact without affecting then inplace==False
+
+rename()
+sort_values()
+set_index()
+
+
+Questions
+a.What about reading from csv file only two columns and ignore others?
+b.What is the fastest method to read from csv file?
+c.How to define type of each column before actually reading the csv
+
+Method	File format
+pandas.read_table()	Tab separated values (TSV)
+pandas.read_excel()	Excel spreadsheets
+pandas.read_csv()	Comma separated values (CSV)
+pandas.read_json()	JSON files
+pandas.read_html()	HTML files
+pandas.read_sql_query()	SQL Database
+
+
+
+11."Axis" Parameter in pandas
+
+axis=1 -> Column axis
+axis=0 -> Row axis
+
+Eg: titanic.mean()
+
+Default behaviour of mean is axis = 0
+
+12.String Method in pandas
+.str - the string method that we use in pandas
+
+13.Change the data type of pandas series
+dtype is the method that we used to convert the datatype of a particular series
+
+astype - casting from one data type to another
+
+14.Using "groupby" in pandas
+Anytime you want to analyze some pandas series by some category
+
+15.Exploring pandas series
+
+16.Handle Missing values in pandas
+
+Nan - stands for Not a Number, conceptually its a missing values.
+sum is doing by axis=0 by default
+For dropping, inplace=False is default
+
+17.Pandas index part-1
+
+Vertical - Columns-
+Horizontal -rows
+
+Index are known as row labels
+
+0
+1
+2
+3
+4
+
+Columns
+Country beer_servings spirit_servings
+
+Every dataframe has index and column
+Eg: drinks.shape
+(193,6)  193, rows   6,columns
+
+18.Pandas index part-1
+Why index exists?
+a.Identification,Selection,Alignment
+Identification- Filtering the data frames.
+
+b.Selection(loc) - Grabbing a piece of data frame
+loc- filtering rows and selecting columns by label.Label(Rows->Index, Column->Columns)
+loc inclusive on both sides
+
+c.Alignment-
+
+19.Selecting multiple rows and columns from pandas dataframe
+loc- filtering rows and selecting columns by label.Label(Rows->Index, Column->Columns)
+loc is inclusive on both sides
+
+iloc -  filtering rows and selecting columns by integer position
+inclusive on the start and exclusive of stop
+
+ix - It allows you to mix labels and integers
+
+20.Using "inplace" parameter in pandas
+The drop method has inplace parameters which is False by default.
+
+Example Functions
+rename()
+sort_values()
+set_index()
+
+21.Making pandas DataFrame smaller and faster
+What does the type category do?How to properly use it?
+info() - tells about index,not null,datatypes
+Objects usually means a string is stored
+we can store arbitary python objects in a pandas series and pandas basically stores reference.
+object columns will take lot of space
+Integers are more space efficient than strings
+
+22.Using pandas with Scikit-learn to create kaggle submissions
+kaggle - It is a popular platform for doing competitive machine learning
+Machine Learning - It is the semi automated extraction of knowledge from data
+
+Save python object to disk
+
+23.Questions
+1.How to read the pandas doc
+
+2.It looks like ufo.isnull() and pd.isnull(ufo) has the same result, but one is calling a function of the object and the other 
+is using the object as argument.Is this a special case because isnull takes in the dataset as argument?
+
+3.It seems to me that the pandas team is split between inclusive and exclusive ranges. 0:4 is different from loc to iloc.
+Do you know what the reasoning is behind this
+
+pandas is built on top of numpy.It follows numpy conventions
+
+4.How to handle large csv files?(Over 3GB).Is there a practical way to randomly sample rows?
+
+24.Create dummy variables in pandas
+
+25.Working with dates and times in pandas
+
+26.Find and Remove duplicate row in pandas
+
+27.Avoid a SettingWithCopyWarning in pandas
+
+28.Changing Display options in pandas
+
+29.How to create pandas dataframe from another object
+How do you create dataframe from scratch i.e. without reading a file?This is handy when you
+want to create some toy data to play around with.There are several different ways to
+construct a DataFrame and its confusing to find the best method.
+
+Specifically, need to construct a DataFrame with specific columns in specific order.
+Using the dict constructor, the order cannot be enforced.
+
+30.Applying a function to pandas Series or DataFrame
+Question: Difference between apply,map and applymap
+
+map() is a series method, which maps the existing values of a Series to a different set of values
+apply() is both series and dataframe method, it applies a function to each element in series
+
+apply() as a dataframe method applies a function along either axis of a dataframe
+
+applymap() is also a dataframe method.It is to apply function to every element of a dataframe.
+
+31.Using MultiIndex in pandas
+Could you please elaborate on multiIndexing,how does it relate to group by?How do slice a multiindex table?
+How do concetenate on more than one level
